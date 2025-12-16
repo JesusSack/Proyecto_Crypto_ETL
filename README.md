@@ -13,14 +13,11 @@ El flujo de datos está diseñado para ser **100% Serverless** (sin servidores q
 
 ```mermaid
 graph LR
-A[API CoinGecko] -->|Extracción JSON| B(Script Python ETL)
-B -->|Transformación & Limpieza| B
-B -->|Carga Histórica| C[(Google BigQuery)]
-C -->|Conexión Directa| D[Dashboard Looker Studio]
-E[GitHub Actions] -->|Ejecución Diaria Automática| B
-
-
-
+  A[API CoinGecko] -->|Extracción JSON| B(Script Python ETL)
+  B -->|Transformación & Limpieza| B
+  B -->|Carga Histórica| C[(Google BigQuery)]
+  C -->|Conexión Directa| D[Dashboard Looker Studio]
+  E[GitHub Actions] -->|Ejecución Diaria Automática| B
 
 
 🛠️ Tecnologías Utilizadas
@@ -36,24 +33,27 @@ Seguridad: Gestión de credenciales mediante GitHub Secrets (Service Accounts en
 
 Business Intelligence: Google Looker Studio.
 
+
+
 ⚙️ Configuración Local
 Si deseas correr este proyecto en tu máquina local:
 
-1.   Clonar el repositorio:  git clone [https://github.com/TU_USUARIO/Proyecto_Crypto_ETL.git](https://github.com/TU_USUARIO/Proyecto_Crypto_ETL.git)
+1. Clonar el repositorio: git clone [https://github.com/JesusSack/Proyecto_Crypto_ETL.git](https://github.com/JesusSack/Proyecto_Crypto_ETL.git)
 cd Proyecto_Crypto_ETL
-2.   Instalar dependencias:
-pip install requests google-cloud-bigquery
-3.   Configurar Credenciales de Google:
 
-Necesitas una Service Account de Google Cloud con permisos de "BigQuery Admin".
+
+2. Instalar dependencias: pip install requests google-cloud-bigquery
+
+
+3. Configurar Credenciales de Google: Necesitas una Service Account de Google Cloud con permisos de "BigQuery Admin".
 
 Descarga el archivo .json de la llave.
 
 Renómbralo a credenciales_google.json y colócalo en la raíz del proyecto.
 
-4.   Ejecutar el ETL: python extraer_crypto_api.py
+4. Ejecutar el ETL: python extraer_crypto_api.py
 
-5.   🤖 Automatización (CI/CD)
+🤖 Automatización (CI/CD)
 El archivo .github/workflows/ejecucion_diaria.yml contiene la lógica para la ejecución automática.
 
 Utiliza un entorno virtual Ubuntu en la nube de GitHub.
