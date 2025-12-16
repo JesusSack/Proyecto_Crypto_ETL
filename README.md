@@ -18,3 +18,57 @@ B -->|Transformación & Limpieza| B
 B -->|Carga Histórica| C[(Google BigQuery)]
 C -->|Conexión Directa| D[Dashboard Looker Studio]
 E[GitHub Actions] -->|Ejecución Diaria Automática| B
+
+
+
+
+
+🛠️ Tecnologías Utilizadas
+Lenguaje: Python 3.
+
+Librerías: requests (API), google-cloud-bigquery (Cloud connection), os, json.
+
+Cloud Computing: Google BigQuery (Data Warehouse).
+
+CI/CD & Automatización: GitHub Actions (YAML Workflows).
+
+Seguridad: Gestión de credenciales mediante GitHub Secrets (Service Accounts encriptadas).
+
+Business Intelligence: Google Looker Studio.
+
+⚙️ Configuración Local
+Si deseas correr este proyecto en tu máquina local:
+
+1.   Clonar el repositorio:  git clone [https://github.com/TU_USUARIO/Proyecto_Crypto_ETL.git](https://github.com/TU_USUARIO/Proyecto_Crypto_ETL.git)
+cd Proyecto_Crypto_ETL
+2.   Instalar dependencias:
+pip install requests google-cloud-bigquery
+3.   Configurar Credenciales de Google:
+
+Necesitas una Service Account de Google Cloud con permisos de "BigQuery Admin".
+
+Descarga el archivo .json de la llave.
+
+Renómbralo a credenciales_google.json y colócalo en la raíz del proyecto.
+
+4.   Ejecutar el ETL: python extraer_crypto_api.py
+
+5.   🤖 Automatización (CI/CD)
+El archivo .github/workflows/ejecucion_diaria.yml contiene la lógica para la ejecución automática.
+
+Utiliza un entorno virtual Ubuntu en la nube de GitHub.
+
+Inyecta las credenciales de Google de forma segura desde los Repository Secrets en tiempo de ejecución.
+
+No requiere intervención humana.
+
+📊 Visualización
+Los datos se visualizan en un tablero de control que permite monitorear:
+
+Tendencia de precios históricos.
+
+Volumen de mercado y Capitalización.
+
+Comparativa entre monedas.
+
+Desarrollado como proyecto de Ingeniería de Datos aplicada a Finanzas.
