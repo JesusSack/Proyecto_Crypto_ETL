@@ -20,6 +20,7 @@ graph LR
   E[GitHub Actions] -->|Ejecución Diaria Automática| B
 
 
+
 🛠️ Tecnologías Utilizadas
 Lenguaje: Python 3.
 
