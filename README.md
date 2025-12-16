@@ -18,7 +18,7 @@ graph LR
   B -->|Carga Histórica| C[(Google BigQuery)]
   C -->|Conexión Directa| D[Dashboard Looker Studio]
   E[GitHub Actions] -->|Ejecución Diaria Automática| B
-
+```
 
 
 🛠️ Tecnologías Utilizadas
