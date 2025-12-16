@@ -1,0 +1,32 @@
+name: ETL Crypto Diario
+
+on:
+  schedule:
+    # Se ejecuta cada hora (Minuto 0 de cada hora)
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Chequear el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar librerías
+        run: |
+          pip install -r requirements.txt
+
+      - name: Crear archivo de credenciales temporal
+        #creamos el archivo json usando el secreto guardado
+        run: |
+          echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credenciales_google.json
+
+      - name: Ejecutar Script ETL
+        run: python extraer_crypto_api.py
