@@ -4,15 +4,15 @@ from datetime import datetime
 from google.cloud import bigquery
 import os
 
-# --- CONFIGURACIÓN ---
+#     CONFIGURACIÓN 
 PROJECT_ID = "proyectocrypto-481400"  
 DATASET_ID = 'dw_crypto'    
 TABLE_ID = "historial_precios"           
 
-# Ruta a tus credenciales (igual que en el otro script)
+# Ruta a tus credenciales
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credenciales_google.json"
 
-# Mapeo de Monedas (ID de CoinGecko : Símbolo para tu tabla)
+#     Mapeo de Monedas 
 monedas = {
     'bitcoin': 'BTC',
     'ethereum': 'ETH',

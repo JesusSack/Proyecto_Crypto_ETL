@@ -31,7 +31,7 @@ def main():
             
             if not os.path.exists(NOMBRE_ARCHIVO_KEY):
                 print(f"❌ ERROR CRÍTICO: No encuentro el archivo '{NOMBRE_ARCHIVO_KEY}'.")
-                print("   Asegúrate de haberlo movido a esta carpeta.")
+                print("                                            .")
                 return
 
             credentials = service_account.Credentials.from_service_account_file(NOMBRE_ARCHIVO_KEY)
