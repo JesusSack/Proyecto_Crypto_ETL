@@ -9,7 +9,7 @@ PROJECT_ID = "proyectocrypto-481400"
 DATASET_ID = 'dw_crypto'    
 TABLE_ID = "historial_precios"           
 
-# Ruta a tus credenciales
+# Ruta de credenciales
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credenciales_google.json"
 
 #     Mapeo de Monedas 
