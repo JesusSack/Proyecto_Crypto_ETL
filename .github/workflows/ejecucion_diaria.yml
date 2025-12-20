@@ -24,7 +24,7 @@ jobs:
           pip install requests google-cloud-bigquery
 
       - name: Crear archivo de credenciales temporal
-        #creamos el archivo json usando el secreto guardado
+        
         run: |
           echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credenciales_google.json
 
